@@ -14,7 +14,7 @@ jobs:
           java-version: '17'
       - name: Definir variable
         run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV        
-      - name: Compilar Archivo
-        run: javac Main.java  
+      #- name: Compilar Archivo
+      #  run: javac Main.java  
       - name: Correr script
-        run: java Main.class
+        run: java Main.java
