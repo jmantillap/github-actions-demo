@@ -1,1 +1,20 @@
-
+name: Aprendiendo GitHub Actions
+run-name: ¡Estoy aprendiendo GitHub Actions!
+on: [push]
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3       
+      - name: setup
+        uses: actions/setup-java@v3        
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV        
+      - name: Compilar Archivo
+        run: javac Main.java  
+      - name: Correr script
+        run: java Main.class
